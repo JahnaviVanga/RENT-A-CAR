@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rent a Car - Register</title>
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <style>
+        /* Add custom CSS */
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            background-color: #333;
+            padding: 10px;
+            color: #fff;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 15px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80vh;
+            background-color: #f4f4f4;
+        }
+
+        .form-section {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-container label,
+        .form-container input {
+            margin-bottom: 10px;
+        }
+
+        .form-container input {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .submit-button,
+        .reset-button {
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .submit-button {
+            background-color: #28a745;
+            color: white;
+        }
+
+        .reset-button {
+            background-color: #dc3545;
+            color: white;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Account view styling */
+        .account-section {
+            display: none; /* Hide account section initially */
+            margin-top: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+        }
+
+        .account-nav {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Rent a Car</h1>
+        <h2>Register for an Account</h2>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><button id="logoutButton" class="reset-button">Logout</button></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <!-- Registration Form -->
+        <section class="form-section">
+            <h2>Register an Account</h2>
+            <form id="registrationForm" class="form-container">
+                <fieldset>
+                    <legend>Registration Form</legend>
+                    
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                    
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                    
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+                    
+                    <label for="confirmPassword">Confirm Password:</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" required>
+                    
+                    <button type="submit" class="submit-button">Submit</button>
+                    <button type="reset" class="reset-button">Reset</button>
+                </fieldset>
+            </form>
+        </section>
+
+        <!-- Account Section (hidden by default) -->
+        <section id="accountSection" class="account-section">
+            <h2>Welcome to Your Account</h2>
+            <p>Name: <span id="userName"></span></p>
+            <p>Email: <span id="userEmail"></span></p>
+            <!-- Add more personalized content here -->
+        </section>
+    </main>
+    <footer>
+        <p>Contact us at <a href="mailto:info@rentacar.com">info@rentacar.com</a></p>
+    </footer>
+
+    <!-- JavaScript to handle registration logic -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const registrationForm = document.getElementById('registrationForm');
+            const accountSection = document.getElementById('accountSection');
+            const userNameSpan = document.getElementById('userName');
+            const userEmailSpan = document.getElementById('userEmail');
+            const logoutButton = document.getElementById('logoutButton');
+
+            // Handle registration form submission
+            registrationForm.addEventListener('submit', function (event) {
+                event.preventDefault(); // Prevent the default form submission
+                
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const password = document.getElementById('password').value;
+                const confirmPassword = document.getElementById('confirmPassword').value;
+
+                // Basic validation
+                if (password !== confirmPassword) {
+                    alert('Passwords do not match. Please try again.');
+                    return;
+                }
+
+                // Simulate registration process
+                // Normally, here you would send the data to a server to create a new account
+                // For this example, we'll just store the data temporarily and show the account section
+
+                // Hide the registration form
+                registrationForm.style.display = 'none';
+
+                // Show the account section
+                accountSection.style.display = 'block';
+                
+                // Display the user's name and email
+                userNameSpan.textContent = name;
+                userEmailSpan.textContent = email;
+            });
+
+            // Handle logout button click
+            logoutButton.addEventListener('click', function () {
+                // Redirect to the main page
+                window.location.href = 'index.html';
+            });
+        });
+    </script>
+</body>
+</html>

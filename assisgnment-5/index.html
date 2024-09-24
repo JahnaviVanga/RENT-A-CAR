@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rent a Car - Home</title>
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <style>
+        /* Smooth scroll behavior for all anchors */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Navbar Styles */
+        header {
+            background-color: #333;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+        
+        header img {
+            height: 50px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            transition: background-color 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: #575757;
+            border-radius: 5px;
+        }
+
+        /* Car Gallery Styles */
+        .car-container {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .car-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .car-card {
+            width: 200px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+
+        .car-card:hover {
+            transform: scale(1.05);
+        }
+
+        .car-card img {
+            width: 100%;
+            height: auto;
+        }
+
+        .book-btn, .more-details-btn {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            margin-top: 10px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .book-btn:hover, .more-details-btn:hover {
+            background-color: #575757;
+        }
+
+        /* Footer styles */
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<script>
+    // JavaScript function to handle 'More Details' button click
+    function showDetails(carName) {
+        alert(`Details for ${carName}: \nThis car is available for rent at an affordable price. Contact us for more info.`);
+    }
+
+    // JavaScript function to handle 'Book a Car' button click
+    function bookCar(carName) {
+        const userName = prompt(`Booking form for ${carName}:\nPlease enter your name:`);
+        if (userName) {
+            alert(`Thank you, ${userName}! Your booking for ${carName} has been received. We will contact you shortly.`);
+        } else {
+            alert("Booking canceled.");
+        }
+    }
+
+    // JavaScript function to scroll to the car gallery section
+    function scrollToCarGallery() {
+        document.getElementById('car-gallery').scrollIntoView({ behavior: 'smooth' });
+    }
+</script>
+<body>
+    <header>
+        <h1 class="logo-heading">
+           
+           Car quest
+        </h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="register.html">Register</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="dashboard.html">cars</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="bookings.html">My Bookings</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <h1>Find Your Perfect Rental Car</h1>
+            <p>Easy, Fast, and Reliable Car Rentals.</p>
+            <button onclick="scrollToCarGallery()">Browse Cars</button>
+        </section>
+
+        <!-- Car Gallery Section -->
+        <section id="car-gallery" class="car-container">
+            <h3>AVAILABLE CARS</h3>
+            <div class="car-wrapper">
+                <div class="car-card">
+                    <img src="./images/baleno.jpg" alt="Car 1">
+                    <h2>Baleno</h2>
+                    <p>Price: INR:5000/day</p>
+                    <button class="book-btn" onclick="bookCar('Baleno')">Book a Car</button>
+                    <button class="more-details-btn" onclick="showDetails('Baleno')">More Details</button>
+                </div>
+                <div class="car-card">
+                    <img src="./images/creta.jpg" alt="Car 2">
+                    <h2>Creta</h2>
+                    <p>Price: INR:6000/day</p>
+                    <button class="book-btn" onclick="bookCar('creta')">Book a Car</button>
+                    <button class="more-details-btn" onclick="showDetails('creta')">More Details</button>
+                </div>
+                <div class="car-card">
+                    <img src="./images/fortuner.jpg" alt="Car 3">
+                    <h2>Fortuner</h2>
+                    <p>Price: INR:7000/day</p>
+                    <button class="book-btn" onclick="bookCar('Fortuner')">Book a Car</button>
+                    <button class="more-details-btn" onclick="showDetails('Fortuner')">More Details</button>
+                </div>
+                <div class="car-card">
+                    <img src="./images/i20.jpg" alt="Car 4">
+                    <h2>i20</h2>
+                    <p>Price: INR:5500/day</p>
+                    <button class="book-btn" onclick="bookCar('i20')">Book a Car</button>
+                    <button class="more-details-btn" onclick="showDetails('i20')">More Details</button>
+                </div>
+                <div class="car-card">
+                    <img src="./images/innova.jpg" alt="Car 5">
+                    <h2>Innova</h2>
+                    <p>Price: INR:6500/day</p>
+                    <button class="book-btn" onclick="bookCar('Innova')">Book a Car</button>
+                    <button class="more-details-btn" onclick="showDetails('Innova')">More Details</button>
+                </div>
+                <div class="car-card">
+                    <img src="./images/kia.jpg" alt="Car 6">
+                    <h2>kia</h2>
+                    <p>Price: INR:4500/day</p>
+                    <button class="book-btn" onclick="bookCar('kia')">Book a Car</button>
+                    <button class="more-details-btn" onclick="showDetails('kia')">More Details</button>
+                </div>
+                <div class="car-card">
+                    <img src="./images/nexon.jpg" alt="Car 7">
+                    <h2>Nexon</h2>
+                    <p>Price: INR:7500/day</p>
+                    <button class="book-btn" onclick="bookCar('Nexon')">Book a Car</button>
+                    <button class="more-details-btn" onclick="showDetails('Nexon')">More Details</button>
+                </div>
+                <div class="car-card">
+                    <img src="./images/punch.jpg" alt="Car 8">
+                    <h2>Punch</h2>
+                    <p>Price: INR:8500/day</p>
+                    <button class="book-btn" onclick="bookCar('Punch')">Book a Car</button>
+                    <button class="more-details-btn" onclick="showDetails('Punch')">More Details</button>
+                </div>
+                <div class="car-card">
+                    <img src="./images/swift.jpg" alt="Car 9">
+                    <h2>Swift</h2>
+                    <p>Price: INR:9000/day</p>
+                    <button class="book-btn" onclick="bookCar('Swift')">Book a Car</button>
+                    <button class="more-details-btn" onclick="showDetails('Swift')">More Details</button>
+                </div>
+                <div class="car-card">
+                    <img src="./images/thar.jpg" alt="Car 10">
+                    <h2>Thar</h2>
+                    <p>Price: INR:5050/day</p>
+                    <button class="book-btn" onclick="bookCar('Thar')">Book a Car</button>
+                    <button class="more-details-btn" onclick="showDetails('Thar')">More Details</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <button id="viewMoreBtn" class="view-more-btn">View More</button>
+</section>
+</main>
+
+<footer>
+<p>Contact us at <a href="mailto:info@rentacar.com">info@rentacar.com</a></p>
+</footer>
+
+<script>
+document.getElementById('viewMoreBtn').addEventListener('click', function() {
+    window.location.href = 'dashboard.html';
+});
+</script>
+</body>
+</html>  
