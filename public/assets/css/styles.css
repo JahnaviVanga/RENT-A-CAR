@@ -1,0 +1,254 @@
+/* General Body Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-color: #828971;
+}
+
+/* Header Styling */
+header {
+    background-color: #333;
+    color: white;
+    padding: 2.5rem;
+    text-align: left;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    width: 50px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+/* Navigation Styling */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: right;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-right: 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 5px 10px;
+    transition: color 0.3s ease;
+
+}
+
+
+
+nav ul li a:hover {
+    color: #007BFF;
+    font-size: 1.2rem;
+    @keyframes myOpacity {
+        50%{opacity:0;}
+    }
+}
+/* Hero Section */
+.hero {
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    background-image: url('../img/CAR1.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    margin-top: 20px; /* Add space between header and hero section */
+}
+
+.hero h1 {
+    font-size: 3em;
+}
+
+.hero p {
+    font-size: 1.5em;
+}
+
+.hero button {
+    background-color: #d71313;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+.hero button:hover {
+    background-color: #a50f0f;
+    font-size:1.5rem;
+}
+
+/* Car Container and Card Styling */
+.car-container {
+    padding: 4rem;
+}
+
+.car-wrapper {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* Five columns */
+    gap: 2rem; /* Reduced space between the images */
+}
+
+.car-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px; /* Reduced padding */
+    text-align: center;
+    transition: transform 0.3s;
+
+}
+
+.car-card img {
+    max-width: 100%;
+    border-radius: 8px;
+    
+}
+
+.car-card h2 {
+    font-size: 1.2em; /* Reduced font size */
+}
+
+.car-card p {
+    font-size: 1em;
+     /* Reduced font size */
+}
+
+.book-btn, .more-details-btn {
+    margin-top: 8px;
+    padding: 8px;
+    font-size: 0.9rem; /* Reduced button font size */
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    
+}
+
+.book-btn {
+    background-color: #4CAF50;
+    color: white;
+    font-size:1.5rem;
+}
+
+.book-btn:hover {
+    background-color: #45a049;
+}
+
+.more-details-btn {
+    background-color:grey;
+    color: white;
+}
+
+.more-details-btn:hover {
+    background-color:grey;
+}
+
+
+/* Form Styling */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem; /* Adds space between input fields */
+    max-width: 600px; /* Set a max width for the form */
+    margin: 2rem auto; /* Center the form horizontally */
+    padding: 2rem;
+    background-color: #828971;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+form label {
+    font-weight: bold;
+}
+
+form input, form button {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+form button {
+    background-color: #007BFF;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #0056b3;
+}
+
+form .reset-button {
+    background-color: #f44336;
+    color: white;
+}
+
+form .reset-button:hover {
+    background-color: #d32f2f;
+}
+
+/* View More Button */
+.view-more-btn {
+    margin-top: 2rem;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    font-size: 1.2em;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.view-more-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 1.5rem;
+    text-align: left;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Media Queries */
+@media (max-width: 1024px) {
+    .car-wrapper {
+        grid-template-columns: repeat(3, 1fr); /* Three columns for medium screens */
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .car-wrapper {
+        grid-template-columns: repeat(2, 1fr); /* Two columns for smaller screens */
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .car-wrapper {
+        grid-template-columns: 1fr; /* Stack cars in one column for mobile */
+        gap: 0.5rem;
+    }
+}
