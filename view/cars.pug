@@ -1,0 +1,92 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title Available Cars - Rent a Car
+    link(rel="stylesheet" href="../public/assets/css/dashboard.css")
+    script.
+      // JavaScript function to handle 'More Details' button click
+      function showDetails(carName) {
+          alert(`Details for ${carName}: \nThis car is available for rent at an affordable price. Contact us for more info.`);
+      }
+
+      // JavaScript function to handle 'Book a Car' button click
+      function bookCar(carName) {
+          const userName = prompt(`Booking form for ${carName}:\nPlease enter your name:`);
+          if (userName) {
+              alert(`Thank you, ${userName}! Your booking for ${carName} has been received. We will contact you shortly.`);
+          } else {
+              alert("Booking canceled.");
+          }
+      }
+  body
+    header
+      h1 Available Cars for Rent
+      nav
+        // Navigation items can be added here if needed
+    main
+      .car-container
+        .car-card
+          img(src="../public/assets/img/image4.png" alt="Car 1")
+          h2 Car Name 1
+          p Price: $50/day
+          button.book-btn(onclick="bookCar('Car Name 1')") Book a Car
+          button.more-details-btn(onclick="showDetails('Car Name 1')") More Details
+        .car-card
+          img(src="../public/assets/img/car2.jpg" alt="Car 2")
+          h2 Car Name 2
+          p Price: $60/day
+          button.book-btn(onclick="bookCar('Car Name 2')") Book a Car
+          button.more-details-btn(onclick="showDetails('Car Name 2')") More Details
+        .car-card
+          img(src="../public/assets/img/image.png" alt="Car 3")
+          h2 Car Name 3
+          p Price: $70/day
+          button.book-btn(onclick="bookCar('Car Name 3')") Book a Car
+          button.more-details-btn(onclick="showDetails('Car Name 3')") More Details
+        .car-card
+          img(src="../public/assets/img/image1.png" alt="Car 4")
+          h2 Car Name 4
+          p Price: $80/day
+          button.book-btn(onclick="bookCar('Car Name 4')") Book a Car
+          button.more-details-btn(onclick="showDetails('Car Name 4')") More Details
+        .car-card
+          img(src="../public/assets/img/image2.png" alt="Car 5")
+          h2 Car Name 5
+          p Price: $90/day
+          button.book-btn(onclick="bookCar('Car Name 5')") Book a Car
+          button.more-details-btn(onclick="showDetails('Car Name 5')") More Details
+        .car-card
+          img(src="../public/assets/img/image3.png" alt="Car 6")
+          h2 Car Name 6
+          p Price: $100/day
+          button.book-btn(onclick="bookCar('Car Name 6')") Book a Car
+          button.more-details-btn(onclick="showDetails('Car Name 6')") More Details
+        .car-card
+          img(src="../public/assets/img/image4.png" alt="Car 7")
+          h2 Car Name 7
+          p Price: $110/day
+          button.book-btn(onclick="bookCar('Car Name 7')") Book a Car
+          button.more-details-btn(onclick="showDetails('Car Name 7')") More Details
+        .car-card
+          img(src="../public/assets/img/image5.png" alt="Car 8")
+          h2 Car Name 8
+          p Price: $120/day
+          button.book-btn(onclick="bookCar('Car Name 8')") Book a Car
+          button.more-details-btn(onclick="showDetails('Car Name 8')") More Details
+        .car-card
+          img(src="../public/assets/img/image6.png" alt="Car 9")
+          h2 Car Name 9
+          p Price: $130/day
+          button.book-btn(onclick="bookCar('Car Name 9')") Book a Car
+          button.more-details-btn(onclick="showDetails('Car Name 9')") More Details
+        .car-card
+          img(src="../public/assets/img/image7.png" alt="Car 10")
+          h2 Car Name 10
+          p Price: $140/day
+          button.book-btn(onclick="bookCar('Car Name 10')") Book a Car
+          button.more-details-btn(onclick="showDetails('Car Name 10')") More Details
+    footer
+      p Contact us at 
+        a(href="mailto:info@rentacar.com") info@rentacar.com

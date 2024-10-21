@@ -1,0 +1,151 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title Rent a Car - Register
+    link(rel="stylesheet", href="../public/assets/css/styles.css")
+    style.
+      /* Add custom CSS */
+      body {
+          font-family: Arial, sans-serif;
+      }
+      header {
+          background-color: #333;
+          padding: 10px;
+          color: #fff;
+          text-align: center;
+      }
+      nav ul {
+          list-style-type: none;
+          padding: 0;
+      }
+      nav ul li {
+          display: inline;
+          margin-right: 15px;
+      }
+      nav ul li a, .reset-button {
+          color: #fff;
+          text-decoration: none;
+          padding: 10px 20px;
+          background-color: #dc3545;
+          border: none;
+          cursor: pointer;
+          border-radius: 4px;
+      }
+      main {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 80vh;
+          background-color: #f4f4f4;
+      }
+      .form-section {
+          background-color: #fff;
+          padding: 20px;
+          border-radius: 8px;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      .form-container {
+          display: flex;
+          flex-direction: column;
+      }
+      .form-container label,
+      .form-container input {
+          margin-bottom: 10px;
+      }
+      .form-container input {
+          padding: 10px;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          width: 100%;
+          box-sizing: border-box;
+      }
+      .submit-button,
+      .reset-button {
+          padding: 10px;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+          margin-top: 10px;
+      }
+      .submit-button {
+          background-color: #28a745;
+          color: white;
+      }
+      .reset-button {
+          background-color: #dc3545;
+          color: white;
+      }
+      footer {
+          text-align: center;
+          padding: 10px;
+          background-color: #333;
+          color: #fff;
+          position: fixed;
+          bottom: 0;
+          width: 100%;
+      }
+
+  body
+    header
+      h1 Rent a Car
+      h2 Register for an Account
+      nav
+        ul
+          li
+            button#loginButton.reset-button Login
+    main
+      section.form-section
+        h2 Register an Account
+        form#registrationForm.form-container
+          fieldset
+            legend Registration Form
+            label(for="name") Name:
+            input#name(type="text", name="name", required)
+            label(for="email") Email:
+            input#email(type="email", name="email", required)
+            label(for="password") Password:
+            input#password(type="password", name="password", required)
+            label(for="confirmPassword") Confirm Password:
+            input#confirmPassword(type="password", name="confirmPassword", required)
+            button(type="submit", class="submit-button") Submit
+            button(type="reset", class="reset-button") Reset
+    footer
+      p
+        | Contact us at 
+        a(href="mailto:info@rentacar.com") info@rentacar.com
+
+    script.
+      document.addEventListener('DOMContentLoaded', function () {
+          const registrationForm = document.getElementById('registrationForm');
+          const loginButton = document.getElementById('loginButton');
+
+          // Handle registration form submission
+          registrationForm.addEventListener('submit', function (event) {
+              event.preventDefault(); // Prevent the default form submission
+              
+              const name = document.getElementById('name').value;
+              const email = document.getElementById('email').value;
+              const password = document.getElementById('password').value;
+              const confirmPassword = document.getElementById('confirmPassword').value;
+
+              // Basic validation
+              if (password !== confirmPassword) {
+                  alert('Passwords do not match. Please try again.');
+                  return;
+              }
+
+              // Store user data in localStorage
+              localStorage.setItem('userName', name);
+              localStorage.setItem('userEmail', email);
+
+              // Redirect to index.html after successful registration
+              window.location.href = 'index.html';
+          });
+
+          // Redirect to login page when login button is clicked
+          loginButton.addEventListener('click', function () {
+              window.location.href = 'login.html';
+          });
+      });

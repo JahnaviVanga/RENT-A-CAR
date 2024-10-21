@@ -1,0 +1,194 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title Rent a Car - Home
+    link(rel="stylesheet" href="../public/assets/css/styles.css")
+    style.
+      html {
+        scroll-behavior: smooth;
+      }
+      header {
+        background-color: #333;
+        color: #fff;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+      }
+      header img {
+        height: 50px;
+      }
+      nav ul {
+        list-style-type: none;
+        display: flex;
+        gap: 20px;
+      }
+      nav ul li {
+        display: inline;
+      }
+      nav ul li a {
+        color: #fff;
+        text-decoration: none;
+        padding: 10px 20px;
+        transition: background-color 0.3s;
+      }
+      nav ul li a:hover {
+        background-color: #575757;
+        border-radius: 5px;
+      }
+      .profile-dropdown {
+        position: relative;
+        display: inline-block;
+      }
+      .profile-btn {
+        width: 40px;
+        height: 40px;
+        background-color: #8B5E3C;
+        color: white;
+        font-size: 18px;
+        font-weight: bold;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        border: none;
+        cursor: pointer;
+      }
+      .profile-btn:hover {
+        background-color: #71533b;
+      }
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        right: 0;
+        background-color: #fff;
+        min-width: 150px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        border-radius: 5px;
+      }
+      .dropdown-content a {
+        color: #333;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        border-bottom: 1px solid #ddd;
+      }
+      .dropdown-content a:hover {
+        background-color: #f1f1f1;
+      }
+      .profile-dropdown:hover .dropdown-content {
+        display: block;
+      }
+      .dropdown-content a:last-child {
+        border-bottom: none;
+      }
+      .car-container {
+        text-align: center;
+        padding: 20px;
+      }
+      .car-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+      }
+      .car-card {
+        width: 200px;
+        border: 1px solid #ccc;
+        padding: 10px;
+        border-radius: 10px;
+        transition: transform 0.3s;
+      }
+      .car-card:hover {
+        transform: scale(1.05);
+      }
+      .car-card img {
+        width: 100%;
+        height: auto;
+      }
+      .book-btn, .more-details-btn {
+        background-color: #333;
+        color: white;
+        padding: 10px;
+        margin-top: 10px;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+      .book-btn:hover, .more-details-btn:hover {
+        background-color: green;
+      }
+      footer {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 20px;
+        position: relative;
+        bottom: 0;
+        width: 100%;
+      }
+      footer a {
+        color: #fff;
+        text-decoration: underline;
+      }
+      .reset-button {
+        padding: 10px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        margin-top: 10px;
+        background-color: #dc3545;
+        color: white;
+      }
+  body
+    header
+      h1.logo-heading Rent a Car
+      nav
+        ul
+          li
+            a(href="index.html") Home
+          li
+            a(href="cars.html") cars avail
+          li
+            a(href="about.html") About Us
+          li
+            a(href="contact.html") Contact Us
+          li
+            a(href="bookings.html") My Bookings
+          li
+            .profile-dropdown
+              button.profile-btn#profileButton A
+              .dropdown-content
+                a(href="profile.html") My Profile
+                a(href="bookings.html") My Bookings
+                a(href="login.html" id="logoutLink") Logout
+    main
+      section#home.hero
+        h1 Find Your Perfect Rental Car
+        p Easy, Fast, and Reliable Car Rentals.
+        button(onclick="scrollToCarGallery()") Browse Cars
+      section#car-gallery.car-container
+        h3 SAMPLE CARS
+        .car-wrapper
+          each car in [{name: 'Car Model 1', price: 5000, img: 'image3.png'}, {name: 'Car Model 2', price: 6000, img: 'image4.png'}, {name: 'Car Model 3', price: 7000, img: 'image5.png'}, {name: 'Car Model 4', price: 5500, img: 'image6.png'}, {name: 'Car Model 5', price: 6500, img: 'image7.png'}, {name: 'Car Model 6', price: 4500, img: 'image1.png'}, {name: 'Car Model 7', price: 7500, img: 'image2.png'}, {name: 'Car Model 8', price: 4800, img: 'image7.png'}]
+            .car-card
+              img(src=`../public/assets/img/${car.img}` alt=car.name)
+              h2= car.name
+              p Price: INR #{car.price}/day
+              button.book-btn(onclick=`bookCar('${car.name}')`) Book a Car
+              button.more-details-btn(onclick=`showDetails('${car.name}')`) More Details
+    footer
+      p © 2024 Rent a Car. All rights reserved.
+    script.
+      function scrollToCarGallery() {
+        document.getElementById('car-gallery').scrollIntoView({ behavior: 'smooth' });
+      }
+      function bookCar(carModel) {
+        alert('You have booked ' + carModel + '!');
+      }
+      function showDetails(carModel) {
+        alert('More details about ' + carModel + ' will be available soon!');
+      }
